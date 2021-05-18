@@ -1,5 +1,11 @@
 version: "3.8"
 services:
+  db:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - "mongodb:/var/lib/mongodb/data"
   api:
     build: .
     stdin_open: true
@@ -9,3 +15,7 @@ services:
     volumes:
       - .:/app
     command: rails s -b 0.0.0.0
+    depends_on:
+      - db
+volumes:
+  mongodb:
