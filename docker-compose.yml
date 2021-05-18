@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  api:
+    build: .
+    stdin_open: true
+    tty: true
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+    command: rails s -b 0.0.0.0
