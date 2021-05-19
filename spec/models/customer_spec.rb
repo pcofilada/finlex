@@ -63,4 +63,12 @@ RSpec.describe Customer, type: :model do
       end
     end
   end
+
+  describe 'associations' do
+    it 'has_many contracts' do
+      assc = described_class.reflect_on_association(:contracts)
+
+      expect(assc.class).to eq(Mongoid::Association::Referenced::HasMany)
+    end
+  end
 end
