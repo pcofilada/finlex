@@ -1,0 +1,1307 @@
+{
+	"info": {
+		"_postman_id": "a4fcb5ff-8d2f-4939-bc57-9235746963ee",
+		"name": "Finlex",
+		"description": "Finlex Test api documentation.\n\nIt contains following requests\n* Customer CRUD\n* Contract CRUD\n* Contract Bulk Insert\n\n**Note: Update environment variables based on your data from database.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "Get Customers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/customers",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"customers"
+							]
+						},
+						"description": "API endpoint for fetching customer list in the database."
+					},
+					"response": [
+						{
+							"name": "Get Customers",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/customers",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"customers"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f4fc91dba6c3c850abfa12f04cb60b3e\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "e5ff9d17-310f-49da-a9df-3e6d329b017f"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.024041"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": {\n            \"$oid\": \"60a90e42fac3cc0001b805b3\"\n        },\n        \"address\": \"Philippines\",\n        \"email\": \"pcofilada@gmail.com\",\n        \"name\": \"Patrick Ofilada\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Create Customer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "customer[name]",
+									"value": "Patrick Ofilada",
+									"description": "Customer Name",
+									"type": "text"
+								},
+								{
+									"key": "customer[address]",
+									"value": "Philippines",
+									"description": "Customer Address",
+									"type": "text"
+								},
+								{
+									"key": "customer[email]",
+									"value": "pcofilada@gmail.com",
+									"description": "Customer Email",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/customers",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"customers"
+							]
+						},
+						"description": "API endpoint for creating customer in the database."
+					},
+					"response": [
+						{
+							"name": "Create Customer",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "customer[name]",
+											"value": "Patrick Ofilada",
+											"description": "Customer Name",
+											"type": "text"
+										},
+										{
+											"key": "customer[address]",
+											"value": "Philippines",
+											"description": "Customer Address",
+											"type": "text"
+										},
+										{
+											"key": "customer[email]",
+											"value": "pcofilada@gmail.com",
+											"description": "Customer Email",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/customers",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"customers"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"11f5d8b0496db52ae834ba64bb652d04\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "17b4eab4-d236-4ec1-b75a-3ce553ee0b1b"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.112906"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": {\n        \"$oid\": \"60a90e42fac3cc0001b805b3\"\n    },\n    \"address\": \"Philippines\",\n    \"email\": \"pcofilada@gmail.com\",\n    \"name\": \"Patrick Ofilada\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Show Customer",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/customers/{{customer_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"customers",
+								"{{customer_id}}"
+							]
+						},
+						"description": "API endpoint for fetching customer in the database."
+					},
+					"response": [
+						{
+							"name": "Show Customer",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/customers/{{customer_id}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"customers",
+										"{{customer_id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2ba729764a1c41d998c4c7a8d4680696\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "29010873-8df9-4ff1-847a-59b00de8a58f"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.032715"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": {\n        \"$oid\": \"60a90e42fac3cc0001b805b3\"\n    },\n    \"address\": \"Philippines\",\n    \"email\": \"pcofilada@gmail.co\",\n    \"name\": \"Patrick Ofilada\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Customer",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "customer[name]",
+									"value": "Patrick Ofilada",
+									"description": "Customer Name",
+									"type": "text"
+								},
+								{
+									"key": "customer[address]",
+									"value": "Philippines",
+									"description": "Customer Address",
+									"type": "text"
+								},
+								{
+									"key": "customer[email]",
+									"value": "pcofilada@gmail.co",
+									"description": "Customer Email",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/customers/{{customer_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"customers",
+								"{{customer_id}}"
+							]
+						},
+						"description": "API endpoint for updating customer in the database."
+					},
+					"response": [
+						{
+							"name": "Update Customer",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "customer[name]",
+											"value": "Patrick Ofilada",
+											"description": "Customer Name",
+											"type": "text"
+										},
+										{
+											"key": "customer[address]",
+											"value": "Philippines",
+											"description": "Customer Address",
+											"type": "text"
+										},
+										{
+											"key": "customer[email]",
+											"value": "pcofilada@gmail.co",
+											"description": "Customer Email",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/customers/{{customer_id}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"customers",
+										"{{customer_id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2ba729764a1c41d998c4c7a8d4680696\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "1f874238-bf5b-4213-b8dd-b822d18e01df"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.036292"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": {\n        \"$oid\": \"60a90e42fac3cc0001b805b3\"\n    },\n    \"address\": \"Philippines\",\n    \"email\": \"pcofilada@gmail.co\",\n    \"name\": \"Patrick Ofilada\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Customer",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/customers/{{customer_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"customers",
+								"{{customer_id}}"
+							]
+						},
+						"description": "API endpoint for deleting customer in the database."
+					},
+					"response": [
+						{
+							"name": "Delete Customer",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/customers/{{customer_id}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"customers",
+										"{{customer_id}}"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "54800839-9744-48f7-bc16-6c50fe092ef8"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.059744"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			],
+			"description": "Collection of Customer related api request."
+		},
+		{
+			"name": "Contract",
+			"item": [
+				{
+					"name": "Get Customer Contracts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/customers/{{customer_id}}/contracts",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"customers",
+								"{{customer_id}}",
+								"contracts"
+							]
+						},
+						"description": "API endpoint for fetching contract list for a specific customer in the database."
+					},
+					"response": [
+						{
+							"name": "Get Customer Contracts",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/customers/{{customer_id}}/contracts",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"customers",
+										"{{customer_id}}",
+										"contracts"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"6cd9ad34f69ab2024f051c1bd52df972\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "7f727ae9-158f-48c3-bdb7-5695d1c00c8d"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.035467"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": {\n            \"$oid\": \"60a9156afac3cc0001b805b5\"\n        },\n        \"customer_id\": {\n            \"$oid\": \"60a91556fac3cc0001b805b4\"\n        },\n        \"end_date\": \"2021-06-15\",\n        \"expiry_date\": \"2021-06-30\",\n        \"price\": \"100.0\",\n        \"start_date\": \"2021-06-01\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Create Customer Contract",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "contract[price]",
+									"value": "100",
+									"description": "Contract Price",
+									"type": "text"
+								},
+								{
+									"key": "contract[start_date]",
+									"value": "June 1 2021",
+									"description": "Contract Start Date",
+									"type": "text"
+								},
+								{
+									"key": "contract[end_date]",
+									"value": "June 15 2021",
+									"description": "Contract End Date",
+									"type": "text"
+								},
+								{
+									"key": "contract[expiry_date]",
+									"value": "June 30 2021",
+									"description": "Contract Expiry Date",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/customers/{{customer_id}}/contracts",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"customers",
+								"{{customer_id}}",
+								"contracts"
+							]
+						},
+						"description": "API endpoint for creating contract for a specific customer in the database."
+					},
+					"response": [
+						{
+							"name": "Create Customer Contract",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "contract[price]",
+											"value": "100",
+											"description": "Contract Price",
+											"type": "text"
+										},
+										{
+											"key": "contract[start_date]",
+											"value": "June 1 2021",
+											"description": "Contract Start Date",
+											"type": "text"
+										},
+										{
+											"key": "contract[end_date]",
+											"value": "June 15 2021",
+											"description": "Contract End Date",
+											"type": "text"
+										},
+										{
+											"key": "contract[expiry_date]",
+											"value": "June 30 2021",
+											"description": "Contract Expiry Date",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/customers/{{customer_id}}/contracts",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"customers",
+										"{{customer_id}}",
+										"contracts"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"bf89ff1b86ccf06dc75a01dd8d0c9d0d\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "8f075c34-d016-471d-a311-800c56806470"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.066097"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": {\n        \"$oid\": \"60a9156afac3cc0001b805b5\"\n    },\n    \"customer_id\": {\n        \"$oid\": \"60a91556fac3cc0001b805b4\"\n    },\n    \"end_date\": \"2021-06-15\",\n    \"expiry_date\": \"2021-06-30\",\n    \"price\": \"100.0\",\n    \"start_date\": \"2021-06-01\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Customer Contract",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/customers/{{customer_id}}/contracts/{{contract_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"customers",
+								"{{customer_id}}",
+								"contracts",
+								"{{contract_id}}"
+							]
+						},
+						"description": "API endpoint for fetching contract for a specific customer in the database."
+					},
+					"response": [
+						{
+							"name": "Get Customer Contract",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/customers/{{customer_id}}/contracts/{{contract_id}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"customers",
+										"{{customer_id}}",
+										"contracts",
+										"{{contract_id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"bf89ff1b86ccf06dc75a01dd8d0c9d0d\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "d9b34e54-a578-4c96-aeb8-9ee525033257"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.031934"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": {\n        \"$oid\": \"60a9156afac3cc0001b805b5\"\n    },\n    \"customer_id\": {\n        \"$oid\": \"60a91556fac3cc0001b805b4\"\n    },\n    \"end_date\": \"2021-06-15\",\n    \"expiry_date\": \"2021-06-30\",\n    \"price\": \"100.0\",\n    \"start_date\": \"2021-06-01\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Customer Contract",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "contract[price]",
+									"value": "50",
+									"description": "Contract Price",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/customers/{{customer_id}}/contracts/{{contract_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"customers",
+								"{{customer_id}}",
+								"contracts",
+								"{{contract_id}}"
+							]
+						},
+						"description": "API endpoint for updating contract for a specific customer in the database."
+					},
+					"response": [
+						{
+							"name": "Update Customer Contract",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "contract[price]",
+											"value": "50",
+											"description": "Contract Price",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/customers/{{customer_id}}/contracts/{{contract_id}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"customers",
+										"{{customer_id}}",
+										"contracts",
+										"{{contract_id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a2f72e55094c7771998ee4fc104d3e6c\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "2a6eb872-ef00-4e43-80be-3c828b90265b"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.060095"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": {\n        \"$oid\": \"60a9156afac3cc0001b805b5\"\n    },\n    \"customer_id\": {\n        \"$oid\": \"60a91556fac3cc0001b805b4\"\n    },\n    \"end_date\": \"2021-06-15\",\n    \"expiry_date\": \"2021-06-30\",\n    \"price\": \"50.0\",\n    \"start_date\": \"2021-06-01\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Customer Contract",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/customers/{{customer_id}}/contracts/{{contract_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"customers",
+								"{{customer_id}}",
+								"contracts",
+								"{{contract_id}}"
+							]
+						},
+						"description": "API endpoint for deleting contract for a specific customer in the database."
+					},
+					"response": [
+						{
+							"name": "Delete Customer Contract",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/customers/{{customer_id}}/contracts/{{contract_id}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"customers",
+										"{{customer_id}}",
+										"contracts",
+										"{{contract_id}}"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "d447e258-1842-4c27-8358-c20db35f2ee5"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.053879"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Bulk Insert Contracts",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"description": "Check docs folder for sample csv file",
+									"type": "file",
+									"src": "/Users/pcofilada/Documents/sample_contract.csv"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/import_contracts",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"import_contracts"
+							]
+						},
+						"description": "API endpoint for bulk inserting customer and contract to the database from a csv file."
+					},
+					"response": [
+						{
+							"name": "Bulk Insert Contracts",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"description": "Check docs folder for sample csv file",
+											"type": "file",
+											"src": "/Users/pcofilada/Documents/sample_contract.csv"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/import_contracts",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"import_contracts"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d70acaf203ae79463dd1aa81a92a5992\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "c8f7b140-69ca-4c34-b4c7-28693292fb2f"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.205329"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Processing...\"\n}"
+						}
+					]
+				}
+			],
+			"description": "Collection of Contract related api request."
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "localhost:3000"
+		},
+		{
+			"key": "customer_id",
+			"value": "customer-id-here"
+		},
+		{
+			"key": "contract_id",
+			"value": "contract-id-here"
+		}
+	]
+}

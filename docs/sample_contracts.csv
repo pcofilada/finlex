@@ -1,0 +1,5 @@
+email,name,address,price,start_date,end_date,expiry_date
+pcofilada@gmail.com,Patrick Ofilada,Philippines,100,May 25 2021,May 30 2021,January 1 2022
+johndoe@gmail.com,John Doe,Europe,50,May 25 2021,May 30 2021,January 1 2022
+johndoe@gmail.com,John Doe,Europe,1000,May 25 2021,May 30 2021,January 1 2022
+johndoe@gmail.com,John Doe,Europe,15000,June 5 2021,June 30 2021,January 1 2022
