@@ -5,7 +5,7 @@ class Customer
   field :address, type: String
   field :email,   type: String
 
-  has_many :contracts
+  has_many :contracts, dependent: :destroy
 
   validates :name, :address, presence: true
   validates :email, presence: true, uniqueness: true

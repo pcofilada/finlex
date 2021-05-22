@@ -1,5 +1,5 @@
 class ContractsController < ApplicationController
-  before_action :set_customer
+  before_action :set_customer, except: %i[import]
   before_action :set_contract, only: %i[show update destroy]
 
   def index
@@ -32,6 +32,18 @@ class ContractsController < ApplicationController
 
   def destroy
     @contract.destroy
+  end
+
+  def import
+    if params[:file].content_type.include?('csv')
+      csv_text = File.read(params[:file])
+
+      BulkInsertContractWorker.perform_async(csv_text)
+
+      render json: { message: 'Processing...' }, status: :ok
+    else
+      render json: { error: 'Unknow file format' }, status: :unprocessable_entity
+    end
   end
 
   private

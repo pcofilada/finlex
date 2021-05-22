@@ -100,12 +100,35 @@ RSpec.describe "/contracts", type: :request do
     end
   end
 
-  describe "DELETE /destroy" do
+  describe 'DELETE /destroy' do
     it 'destroys the requested contract' do
       contract = Contract.create!(valid_params)
       expect {
         delete customer_contract_url(customer, contract), headers: valid_headers, as: :json
       }.to change(Contract, :count).by(-1)
+    end
+  end
+
+  describe 'POST /import_contracts' do
+    let(:csv_file) { fixture_file_upload(file_fixture('sample_contracts.csv'), 'text/csv') }
+    let(:doc_file) { fixture_file_upload(file_fixture('invalid_contracts.docs'), 'text/docs') }
+
+    context 'with a valid csv file format' do
+      it 'renders json with success message' do
+        post import_contracts_url,
+             params: { file: csv_file }, headers: valid_headers
+        expect(response).to have_http_status(:ok)
+        expect(response.content_type).to match(a_string_including('application/json'))
+      end
+    end
+
+    context 'with invalid file format' do
+      it 'renders json with error message' do
+        post import_contracts_url,
+             params: { file: doc_file }, headers: valid_headers
+        expect(response).to have_http_status(:unprocessable_entity)
+        expect(response.content_type).to match(a_string_including('application/json'))
+      end
     end
   end
 end
