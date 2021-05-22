@@ -1,24 +1,26 @@
-# README
+# FINLEX API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Getting Started
 
-Things you may want to cover:
+```
+  git clone git@github.com:pcofilada/finlex.git
+  cd finlex
+  cp .env.sample .env
+  // Before continuing be sure to change the content of .env file
+  docker-compose up --build
+```
 
-* Ruby version
+### Other Commands
 
-* System dependencies
+```
+  docker-compose run --rm api bundle install // To install new ruby gem
+  docker-compose run --rm api bundle exec rspec // To run the test
+```
 
-* Configuration
+### API Documentation
 
-* Database creation
+- [Finlex API Documentation](https://documenter.getpostman.com/view/1624205/TzXtJfcQ)
 
-* Database initialization
+### System Dependecies
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- [Docker](https://www.docker.com/)
